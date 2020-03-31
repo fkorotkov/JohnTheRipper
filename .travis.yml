@@ -21,7 +21,7 @@ matrix:
     - sudo flatpak install -y flathub org.freedesktop.Platform//18.08
 
     # Install flatpak package
-    - flatpak install --user -y --bundle john.flatpak
+    - sudo flatpak install --user -y --bundle john.flatpak
 
     # Do some testing
     - flatpak run com.openwall.John
