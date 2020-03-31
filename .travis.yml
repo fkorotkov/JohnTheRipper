@@ -17,10 +17,11 @@ matrix:
     - wget https://github.com/claudioandre-br/packages/releases/download/jumbo-dev/flatpak_1_JtR.zip
     - unzip flatpak_1_JtR.zip
     - sudo apt-get install -y flatpak
-  
+    - flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
     # Install flatpak package
     - flatpak install --user -y --bundle john.flatpak
-  
+
     # Do some testing
     - flatpak run com.openwall.John
     - flatpak run com.openwall.John --list=build-info
@@ -29,7 +30,7 @@ matrix:
     - export JTR_BIN='flatpak run com.openwall.John'
     - export JTR_CL='flatpak run com.openwall.John'
     - cd flatpak
-  
+
     # Adjust the testing environment, import and run some testing
     - wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/run_tests.sh
     - source run_tests.sh
